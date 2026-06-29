@@ -1,18 +1,273 @@
-**Customer Behavior Analysis Using Python, MySQL, Power BI & Gamma AI**
+# Customer Behavior Analysis Using Python, MySQL, Power BI & Gamma AI
 
-Developed an end-to-end **Customer Behavior Analysis** project to analyze customer purchasing patterns, identify sales trends, and generate actionable business insights for decision-making. The project involved extracting and managing customer transaction data using **MySQL**, performing data cleaning, preprocessing, and exploratory data analysis (EDA) with **Python (Pandas)**, and creating interactive dashboards in **Power BI**.
+## Project Overview
 
-The analysis included customer segmentation, purchase frequency analysis, sales trend visualization, top-selling product identification, revenue analysis, and key performance indicator (KPI) tracking. SQL was used to efficiently query and manipulate transactional data, while Power BI dashboards provided dynamic visualizations with filters, slicers, and drill-down capabilities for business users.
+Developed an end-to-end **Customer Behavior Analysis** project to analyze customer purchasing behavior, identify business trends, and generate actionable insights that support data-driven decision-making. The project involved working with customer transaction data from data preparation to final business reporting by integrating **Python**, **MySQL**, **Power BI**, and **Gamma AI**.
 
-To improve stakeholder communication, a professional business presentation was created using **Gamma AI**, transforming analytical findings into visually engaging slides that clearly communicated insights, recommendations, and business impact.
+The primary objective was to understand how customers interact with a retail business by analyzing their purchasing patterns, spending habits, product preferences, subscription behavior, discount usage, and shopping frequency. The project followed the complete data analytics lifecycle, including data cleaning, exploratory data analysis (EDA), SQL-based business analysis, dashboard development, and stakeholder communication.
 
-**Technologies Used:** Python, Pandas, Jupyter Notebook (Anaconda), MySQL, Power BI, Gamma AI
+---
 
-**Key Outcomes:**
+# Step 1: Data Collection and Understanding
 
-* Cleaned, validated, and transformed raw customer transaction data for analysis.
-* Performed exploratory data analysis (EDA) to uncover customer purchasing behavior and sales trends.
-* Identified high-value customers and buying patterns through customer segmentation.
-* Analyzed revenue, purchase frequency, payment preferences, and top-performing product categories.
-* Developed interactive Power BI dashboards to visualize sales performance, customer insights, and business KPIs.
-* Designed a stakeholder-ready presentation using Gamma AI to communicate findings, business recommendations, and strategic insights through clear, professional visual storytelling.
+The project started by understanding the structure of the customer shopping dataset, which contained approximately **3,900 customer transaction records** and **18 business-related attributes**.
+
+The dataset included information such as:
+
+* Customer demographics (Age, Gender, Location)
+* Purchase information (Item Purchased, Category, Purchase Amount)
+* Shopping behavior (Previous Purchases, Purchase Frequency)
+* Customer preferences (Shipping Type, Size, Color)
+* Marketing information (Discount Applied, Subscription Status)
+* Customer feedback (Review Rating)
+* Seasonal purchasing information
+
+Before beginning the analysis, the business meaning of every column was understood to identify how each attribute could contribute to solving business problems.
+
+---
+
+# Step 2: Data Cleaning and Preprocessing using Python
+
+The raw dataset was imported into **Python (Pandas)** for cleaning and preprocessing.
+
+The following tasks were performed:
+
+### Data Inspection
+
+* Loaded the dataset into a Pandas DataFrame.
+* Checked the dataset structure using `info()`.
+* Generated descriptive statistics using `describe()`.
+* Identified data types and verified data consistency.
+
+### Missing Value Treatment
+
+* Detected missing values in the **Review Rating** column.
+* Filled missing ratings using the **median review rating within each product category**, preserving category-specific trends instead of using a single overall value.
+
+### Data Standardization
+
+* Renamed column names into **snake_case** for better readability and easier SQL integration.
+* Verified categorical values for consistency.
+* Removed duplicate or redundant information where applicable.
+
+### Feature Engineering
+
+Created new analytical features to improve business analysis:
+
+* **Age Group** for customer segmentation.
+* Purchase frequency measures for behavioral analysis.
+* Standardized data for easier reporting.
+
+### Data Validation
+
+* Compared **Discount Applied** and **Promo Code Used** to identify redundancy.
+* Removed unnecessary columns to simplify analysis.
+* Ensured the final dataset was clean, consistent, and analysis-ready.
+
+---
+
+# Step 3: Database Management using MySQL
+
+After cleaning the dataset, it was imported into **MySQL** for structured querying and business analysis.
+
+The database enabled efficient storage and retrieval of customer transaction records while supporting complex analytical queries.
+
+SQL was used to:
+
+* Filter customer records.
+* Aggregate sales information.
+* Calculate business metrics.
+* Perform customer segmentation.
+* Generate reports for different business scenarios.
+
+Using MySQL improved query performance and simulated how analysts work with transactional databases in real business environments.
+
+---
+
+# Step 4: Business Analysis using SQL
+
+A series of SQL queries were written to answer important business questions.
+
+## Revenue Analysis
+
+* Compared total revenue generated by male and female customers.
+* Identified customer groups contributing the highest revenue.
+
+---
+
+## Customer Spending Analysis
+
+Analyzed customers who:
+
+* Used discounts.
+* Still spent more than the average purchase amount.
+
+This helped identify price-insensitive customers who continue spending despite promotional offers.
+
+---
+
+## Product Performance Analysis
+
+Identified:
+
+* Top-rated products.
+* Most frequently purchased products.
+* Best-performing product categories.
+
+This analysis helped determine products with strong customer satisfaction and consistent demand.
+
+---
+
+## Customer Segmentation
+
+Customers were classified into:
+
+* **New Customers**
+* **Returning Customers**
+* **Loyal Customers**
+
+based on their purchase history.
+
+This segmentation helps businesses create targeted marketing campaigns and loyalty programs.
+
+---
+
+## Subscription Analysis
+
+Compared:
+
+* Subscribers vs Non-Subscribers
+* Average purchase value
+* Total revenue contribution
+
+This analysis measured the effectiveness of subscription programs.
+
+---
+
+## Shipping Analysis
+
+Compared customer spending across different shipping methods, including:
+
+* Standard Shipping
+* Express Shipping
+
+The objective was to determine whether shipping preference influences purchase value.
+
+---
+
+## Discount Analysis
+
+Calculated the percentage of discounted purchases for different products to identify products heavily dependent on promotional pricing.
+
+---
+
+## Purchase Frequency Analysis
+
+Studied customer buying frequency to understand repeat purchasing behavior.
+
+Also analyzed whether customers with higher purchase frequency were more likely to subscribe.
+
+---
+
+## Age Group Analysis
+
+Grouped customers into different age ranges and calculated revenue contribution for each segment.
+
+This helped identify the most valuable customer age groups for targeted marketing.
+
+---
+
+# Step 5: Exploratory Data Analysis (EDA)
+
+Python was used to perform exploratory data analysis before building dashboards.
+
+Different visualizations and summary statistics were created to identify:
+
+* Customer purchasing patterns
+* Revenue distribution
+* Product popularity
+* Purchase frequency trends
+* Customer demographics
+* Spending behavior
+* Review rating distribution
+* Seasonal purchasing trends
+
+EDA helped discover patterns that later became part of the dashboard and business recommendations.
+
+---
+
+# Step 6: Dashboard Development using Power BI
+
+An interactive **Power BI dashboard** was created to transform analytical findings into business-friendly visualizations.
+
+The dashboard included:
+
+* Sales KPIs
+* Total Revenue
+* Average Purchase Amount
+* Customer Segmentation
+* Revenue by Gender
+* Revenue by Age Group
+* Product Category Performance
+* Subscription Analysis
+* Purchase Trends
+* Interactive Filters
+* Slicers
+* Drill-down Reports
+
+The dashboard enables decision-makers to explore business performance dynamically without writing SQL queries.
+
+---
+
+# Step 7: Business Presentation using Gamma AI
+
+To communicate the findings effectively, a professional business presentation was created using **Gamma AI**.
+
+The presentation summarized:
+
+* Business objectives
+* Data analysis process
+* Key insights
+* Dashboard highlights
+* Business recommendations
+* Strategic actions
+
+This transformed technical analysis into an easy-to-understand presentation suitable for business stakeholders and management teams.
+
+---
+
+# Business Recommendations
+
+Based on the analysis, several recommendations were proposed:
+
+* Strengthen customer loyalty programs to retain repeat buyers.
+* Promote subscription plans through exclusive member benefits.
+* Increase marketing efforts for high-value customer segments.
+* Highlight top-rated and best-selling products in promotional campaigns.
+* Review discount strategies to balance sales growth and profitability.
+* Focus personalized marketing campaigns on age groups contributing the highest revenue.
+
+---
+
+# Technologies Used
+
+* Python
+* Pandas
+* Jupyter Notebook (Anaconda)
+* MySQL
+* Power BI
+* Gamma AI
+
+---
+
+# Key Achievements
+
+* Successfully completed an end-to-end data analytics project covering the complete analytics lifecycle.
+* Cleaned, transformed, and validated raw transactional data using Python (Pandas).
+* Performed comprehensive Exploratory Data Analysis (EDA) to uncover customer purchasing patterns and business trends.
+* Designed and executed SQL queries to solve real-world business problems related to sales, customer behavior, subscriptions, discounts, and product performance.
+* Built an interactive Power BI dashboard with KPIs, filters, slicers, and drill-down functionality for business users.
+* Applied customer segmentation techniques to identify New, Returning, and Loyal customers.
+* Generated actionable business recommendations based on analytical findings to support strategic decision-making.
+* Created a professional stakeholder presentation using Gamma AI to communicate technical findings through business-focused storytelling.
+* Demonstrated proficiency across the complete analytics workflow, including data preparation, SQL analysis, business intelligence reporting, and executive-level communication.
